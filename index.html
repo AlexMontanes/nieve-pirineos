@@ -36,11 +36,11 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.wms.js"></script>
         <script src="js/leaflet.photon.js"></script>
-        <script src="data/Nivmetrosconalturamuestreado_2.js"></script>
+        <script src="data/Nivmetrosconalturamuestreado_3.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[42.64555721201318,-0.5870138386723733],[42.74471463277495,-0.3595791525673682]]);
+        }).fitBounds([[42.64114001548767,-0.7222427531609106],[42.83937930064364,-0.2670942683144118]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -137,25 +137,33 @@
             attribution: '',
         });
         map.addLayer(layer_MapasrasterdelIGN_0);
-        map.createPane('pane_MapaEspesores9dic_1');
-        map.getPane('pane_MapaEspesores9dic_1').style.zIndex = 401;
-        var img_MapaEspesores9dic_1 = 'data/MapaEspesores9dic_1.png';
-        var img_bounds_MapaEspesores9dic_1 = [[42.45029496225043,-1.2029166936930877],[43.05000115153403,0.8443243168223165]];
-        var layer_MapaEspesores9dic_1 = new L.imageOverlay(img_MapaEspesores9dic_1,
-                                              img_bounds_MapaEspesores9dic_1,
-                                              {pane: 'pane_MapaEspesores9dic_1'});
-        bounds_group.addLayer(layer_MapaEspesores9dic_1);
-        map.addLayer(layer_MapaEspesores9dic_1);
-        function pop_Nivmetrosconalturamuestreado_2(feature, layer) {
+        map.createPane('pane_Pendiente_1');
+        map.getPane('pane_Pendiente_1').style.zIndex = 401;
+        var img_Pendiente_1 = 'data/Pendiente_1.png';
+        var img_bounds_Pendiente_1 = [[42.45029496225043,-1.2029166936930877],[43.05000115153403,0.8443243168223165]];
+        var layer_Pendiente_1 = new L.imageOverlay(img_Pendiente_1,
+                                              img_bounds_Pendiente_1,
+                                              {pane: 'pane_Pendiente_1'});
+        bounds_group.addLayer(layer_Pendiente_1);
+        map.addLayer(layer_Pendiente_1);
+        map.createPane('pane_MapaEspesores9dic_2');
+        map.getPane('pane_MapaEspesores9dic_2').style.zIndex = 402;
+        var img_MapaEspesores9dic_2 = 'data/MapaEspesores9dic_2.png';
+        var img_bounds_MapaEspesores9dic_2 = [[42.45029496225043,-1.2029166936930877],[43.05000115153403,0.8443243168223165]];
+        var layer_MapaEspesores9dic_2 = new L.imageOverlay(img_MapaEspesores9dic_2,
+                                              img_bounds_MapaEspesores9dic_2,
+                                              {pane: 'pane_MapaEspesores9dic_2'});
+        bounds_group.addLayer(layer_MapaEspesores9dic_2);
+        map.addLayer(layer_MapaEspesores9dic_2);
+        function pop_Nivmetrosconalturamuestreado_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">nombre</th>\
+                        <td>' + (feature.properties['nombre'] !== null ? autolinker.link(String(feature.properties['nombre']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['nombre'] !== null ? autolinker.link(String(feature.properties['nombre']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['tipo'] !== null ? autolinker.link(String(feature.properties['tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">tipo</th>\
+                        <td>' + (feature.properties['tipo'] !== null ? autolinker.link(String(feature.properties['tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['coordenada x'] !== null ? autolinker.link(String(feature.properties['coordenada x']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -174,12 +182,6 @@
                         <th scope="row">Altura</th>\
                         <td>' + (feature.properties['Altura'] !== null ? autolinker.link(String(feature.properties['Altura']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['espesor teórico'] !== null ? autolinker.link(String(feature.properties['espesor teórico']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['residuo'] !== null ? autolinker.link(String(feature.properties['residuo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -188,9 +190,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Nivmetrosconalturamuestreado_2_0() {
-            return {
-                pane: 'pane_Nivmetrosconalturamuestreado_2',
+        function style_Nivmetrosconalturamuestreado_3_0(feature) {
+            switch(String(feature.properties['tipo'])) {
+                case 'AEMET':
+                    return {
+                pane: 'pane_Nivmetrosconalturamuestreado_3',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -200,33 +204,132 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(133,182,111,1.0)',
+                fillColor: 'rgba(75,204,90,1.0)',
                 interactive: true,
             }
+                    break;
+                case 'Estación Esquí':
+                    return {
+                pane: 'pane_Nivmetrosconalturamuestreado_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(189,82,239,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Fondo de Valle':
+                    return {
+                pane: 'pane_Nivmetrosconalturamuestreado_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(21,56,213,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Refugio FAM':
+                    return {
+                pane: 'pane_Nivmetrosconalturamuestreado_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(240,112,170,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Refugios FAM':
+                    return {
+                pane: 'pane_Nivmetrosconalturamuestreado_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(176,201,99,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'SAIH':
+                    return {
+                pane: 'pane_Nivmetrosconalturamuestreado_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(219,128,67,1.0)',
+                interactive: true,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Nivmetrosconalturamuestreado_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(70,221,216,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
         }
-        map.createPane('pane_Nivmetrosconalturamuestreado_2');
-        map.getPane('pane_Nivmetrosconalturamuestreado_2').style.zIndex = 402;
-        map.getPane('pane_Nivmetrosconalturamuestreado_2').style['mix-blend-mode'] = 'normal';
-        var layer_Nivmetrosconalturamuestreado_2 = new L.geoJson(json_Nivmetrosconalturamuestreado_2, {
+        map.createPane('pane_Nivmetrosconalturamuestreado_3');
+        map.getPane('pane_Nivmetrosconalturamuestreado_3').style.zIndex = 403;
+        map.getPane('pane_Nivmetrosconalturamuestreado_3').style['mix-blend-mode'] = 'normal';
+        var layer_Nivmetrosconalturamuestreado_3 = new L.geoJson(json_Nivmetrosconalturamuestreado_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Nivmetrosconalturamuestreado_2',
-            layerName: 'layer_Nivmetrosconalturamuestreado_2',
-            pane: 'pane_Nivmetrosconalturamuestreado_2',
-            onEachFeature: pop_Nivmetrosconalturamuestreado_2,
+            dataVar: 'json_Nivmetrosconalturamuestreado_3',
+            layerName: 'layer_Nivmetrosconalturamuestreado_3',
+            pane: 'pane_Nivmetrosconalturamuestreado_3',
+            onEachFeature: pop_Nivmetrosconalturamuestreado_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Nivmetrosconalturamuestreado_2_0(feature));
+                return L.circleMarker(latlng, style_Nivmetrosconalturamuestreado_3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Nivmetrosconalturamuestreado_2);
-        map.addLayer(layer_Nivmetrosconalturamuestreado_2);
+        bounds_group.addLayer(layer_Nivmetrosconalturamuestreado_3);
+        map.addLayer(layer_Nivmetrosconalturamuestreado_3);
         var overlaysTree = [
-            {label: '<img src="legend/Nivmetrosconalturamuestreado_2.png" /> Nivómetros con altura — muestreado', layer: layer_Nivmetrosconalturamuestreado_2},
-            {label: "Mapa Espesores 9 dic", layer: layer_MapaEspesores9dic_1},
+            {label: 'Nivómetros con altura — muestreado<br /><table><tr><td style="text-align: center;"><img src="legend/Nivmetrosconalturamuestreado_3_AEMET0.png" /></td><td>AEMET</td></tr><tr><td style="text-align: center;"><img src="legend/Nivmetrosconalturamuestreado_3_EstaciónEsquí1.png" /></td><td>Estación Esquí</td></tr><tr><td style="text-align: center;"><img src="legend/Nivmetrosconalturamuestreado_3_FondodeValle2.png" /></td><td>Fondo de Valle</td></tr><tr><td style="text-align: center;"><img src="legend/Nivmetrosconalturamuestreado_3_RefugioFAM3.png" /></td><td>Refugio FAM</td></tr><tr><td style="text-align: center;"><img src="legend/Nivmetrosconalturamuestreado_3_RefugiosFAM4.png" /></td><td>Refugios FAM</td></tr><tr><td style="text-align: center;"><img src="legend/Nivmetrosconalturamuestreado_3_SAIH5.png" /></td><td>SAIH</td></tr><tr><td style="text-align: center;"><img src="legend/Nivmetrosconalturamuestreado_3_6.png" /></td><td></td></tr></table>', layer: layer_Nivmetrosconalturamuestreado_3},
+            {label: "Mapa Espesores 9 dic", layer: layer_MapaEspesores9dic_2},
+            {label: "Pendiente", layer: layer_Pendiente_1},
             {label: "Mapas raster del IGN", layer: layer_MapasrasterdelIGN_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
