@@ -25,7 +25,7 @@ var style_WebCamsPirineos_4 = function(feature, resolution){
     var style = [ new ol.style.Style({
         image: new ol.style.Icon({
                   imgSize: [580, 580],
-                  scale: 0.01896551724137931,
+                  scale: 0.022413793103448276,
                   anchor: [290.0, 290.0],
                   anchorXUnits: "pixels",
                   anchorYUnits: "pixels",
