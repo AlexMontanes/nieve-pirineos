@@ -22,10 +22,9 @@ var lyr_MapaEspesores5nov_1 = new ol.layer.Image({
         
     title: 'Mapa Espesores 5nov<br />\
     <img src="styles/legend/MapaEspesores5nov_1_0.png" /> 0<br />\
-    <img src="styles/legend/MapaEspesores5nov_1_1.png" /> 15 - 30<br />\
-    <img src="styles/legend/MapaEspesores5nov_1_2.png" /> 30 - 60<br />\
-    <img src="styles/legend/MapaEspesores5nov_1_3.png" /> 0- 15<br />\
-    <img src="styles/legend/MapaEspesores5nov_1_4.png" /> 60 - 100<br />' ,
+    <img src="styles/legend/MapaEspesores5nov_1_1.png" /> 0 - 2<br />\
+    <img src="styles/legend/MapaEspesores5nov_1_2.png" /> 2 - 10<br />\
+    <img src="styles/legend/MapaEspesores5nov_1_3.png" /> 10 - 20<br />' ,
         
         
         source: new ol.source.ImageStatic({
