@@ -17,18 +17,18 @@ var lyr_MapasrasterdelIGN_0 = new ol.layer.Tile({
                             
                           });
               wms_layers.push([lyr_MapasrasterdelIGN_0, 0]);
-var lyr_MapaEspesores5nov_1 = new ol.layer.Image({
+var lyr_MapaEspesores13noviembre_1 = new ol.layer.Image({
         opacity: 1,
         
-    title: 'Mapa Espesores 5nov<br />\
-    <img src="styles/legend/MapaEspesores5nov_1_0.png" /> 0<br />\
-    <img src="styles/legend/MapaEspesores5nov_1_1.png" /> 0 - 2<br />\
-    <img src="styles/legend/MapaEspesores5nov_1_2.png" /> 2 - 10<br />\
-    <img src="styles/legend/MapaEspesores5nov_1_3.png" /> 10 - 20<br />' ,
+    title: 'Mapa Espesores 13 noviembre<br />\
+    <img src="styles/legend/MapaEspesores13noviembre_1_0.png" /> 0<br />\
+    <img src="styles/legend/MapaEspesores13noviembre_1_1.png" /> 1 - 2<br />\
+    <img src="styles/legend/MapaEspesores13noviembre_1_2.png" /> 2 - 5<br />\
+    <img src="styles/legend/MapaEspesores13noviembre_1_3.png" /> 5 - 10<br />' ,
         
         
         source: new ol.source.ImageStatic({
-            url: "./layers/MapaEspesores5nov_1.png",
+            url: "./layers/MapaEspesores13noviembre_1.png",
             attributions: ' ',
             projection: 'EPSG:3857',
             alwaysInRange: true,
@@ -70,8 +70,8 @@ var lyr_WebCamsPirineos_3 = new ol.layer.Vector({
                 title: '<img src="styles/legend/WebCamsPirineos_3.png" /> WebCams Pirineos'
             });
 
-lyr_MapasrasterdelIGN_0.setVisible(true);lyr_MapaEspesores5nov_1.setVisible(true);lyr_Nivmetros_2.setVisible(true);lyr_WebCamsPirineos_3.setVisible(true);
-var layersList = [lyr_MapasrasterdelIGN_0,lyr_MapaEspesores5nov_1,lyr_Nivmetros_2,lyr_WebCamsPirineos_3];
+lyr_MapasrasterdelIGN_0.setVisible(true);lyr_MapaEspesores13noviembre_1.setVisible(true);lyr_Nivmetros_2.setVisible(true);lyr_WebCamsPirineos_3.setVisible(true);
+var layersList = [lyr_MapasrasterdelIGN_0,lyr_MapaEspesores13noviembre_1,lyr_Nivmetros_2,lyr_WebCamsPirineos_3];
 lyr_Nivmetros_2.set('fieldAliases', {'fid': 'fid', 'nombre': 'nombre', 'tipo': 'tipo', 'coordenada x': 'coordenada x', 'coordenada y': 'coordenada y', 'espesor': 'espesor', 'fecha': 'fecha', 'Altura': 'Altura', 'espesor teórico': 'espesor teórico', 'residuo': 'residuo', });
 lyr_WebCamsPirineos_3.set('fieldAliases', {'fid': 'fid', 'Nombre': 'Nombre', 'Altitud': 'Altitud', 'Url_imagen': 'Url_imagen', });
 lyr_Nivmetros_2.set('fieldImages', {'fid': 'TextEdit', 'nombre': 'TextEdit', 'tipo': 'TextEdit', 'coordenada x': 'TextEdit', 'coordenada y': 'TextEdit', 'espesor': 'TextEdit', 'fecha': 'DateTime', 'Altura': 'TextEdit', 'espesor teórico': 'TextEdit', 'residuo': 'TextEdit', });
