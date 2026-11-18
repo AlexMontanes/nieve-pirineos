@@ -55,24 +55,24 @@ var lyr_BPA_final_2 = new ol.layer.Image({
             imageExtent: [-133908.073809, 5228671.936464, 93989.753013, 5319585.631461]
         })
     });
-var lyr_MapaEspesores17noviembre_3 = new ol.layer.Image({
+var lyr_MapaEspesores18denoviembre_3 = new ol.layer.Image({
         opacity: 1,
         
-    title: 'Mapa Espesores 17 noviembre<br />\
-    <img src="styles/legend/MapaEspesores17noviembre_3_0.png" /> 0<br />\
-    <img src="styles/legend/MapaEspesores17noviembre_3_1.png" /> 1 - 2<br />\
-    <img src="styles/legend/MapaEspesores17noviembre_3_2.png" /> 3 - 5<br />\
-    <img src="styles/legend/MapaEspesores17noviembre_3_3.png" /> 6 - 10<br />\
-    <img src="styles/legend/MapaEspesores17noviembre_3_4.png" /> 10 - 20<br />\
-    <img src="styles/legend/MapaEspesores17noviembre_3_5.png" /> 20 - 30<br />' ,
+    title: 'Mapa Espesores 18 de noviembre<br />\
+    <img src="styles/legend/MapaEspesores18denoviembre_3_0.png" /> 0<br />\
+    <img src="styles/legend/MapaEspesores18denoviembre_3_1.png" /> 1 - 2<br />\
+    <img src="styles/legend/MapaEspesores18denoviembre_3_2.png" /> 2 - 5<br />\
+    <img src="styles/legend/MapaEspesores18denoviembre_3_3.png" /> 5 - 10<br />\
+    <img src="styles/legend/MapaEspesores18denoviembre_3_4.png" /> 10 - 20<br />\
+    <img src="styles/legend/MapaEspesores18denoviembre_3_5.png" /> 20 - 35<br />' ,
         
         
         source: new ol.source.ImageStatic({
-            url: "./layers/MapaEspesores17noviembre_3.png",
+            url: "./layers/MapaEspesores18denoviembre_3.png",
             attributions: ' ',
             projection: 'EPSG:3857',
             alwaysInRange: true,
-            imageExtent: [-133908.073809, 5228671.936464, 93989.753013, 5319585.631461]
+            imageExtent: [-133908.791385, 5228636.520462, 94023.819477, 5319585.631461]
         })
     });
 var format_Nivmetros_4 = new ol.format.GeoJSON();
@@ -109,9 +109,13 @@ var lyr_WebCamsPirineos_5 = new ol.layer.Vector({
                 interactive: true,
                 title: '<img src="styles/legend/WebCamsPirineos_5.png" /> WebCams Pirineos'
             });
+var group_Factores_regionales = new ol.layer.Group({
+                                layers: [],
+                                fold: 'close',
+                                title: 'Factores_regionales'});
 
-lyr_MapasrasterdelIGN_0.setVisible(true);lyr_Pendiente_1.setVisible(true);lyr_BPA_final_2.setVisible(true);lyr_MapaEspesores17noviembre_3.setVisible(true);lyr_Nivmetros_4.setVisible(true);lyr_WebCamsPirineos_5.setVisible(true);
-var layersList = [lyr_MapasrasterdelIGN_0,lyr_Pendiente_1,lyr_BPA_final_2,lyr_MapaEspesores17noviembre_3,lyr_Nivmetros_4,lyr_WebCamsPirineos_5];
+lyr_MapasrasterdelIGN_0.setVisible(true);lyr_Pendiente_1.setVisible(true);lyr_BPA_final_2.setVisible(true);lyr_MapaEspesores18denoviembre_3.setVisible(true);lyr_Nivmetros_4.setVisible(true);lyr_WebCamsPirineos_5.setVisible(true);
+var layersList = [lyr_MapasrasterdelIGN_0,lyr_Pendiente_1,lyr_BPA_final_2,lyr_MapaEspesores18denoviembre_3,lyr_Nivmetros_4,lyr_WebCamsPirineos_5];
 lyr_Nivmetros_4.set('fieldAliases', {'fid': 'fid', 'nombre': 'nombre', 'tipo': 'tipo', 'coordenada x': 'coordenada x', 'coordenada y': 'coordenada y', 'espesor': 'espesor', 'fecha': 'fecha', 'Altura': 'Altura', 'espesor teórico': 'espesor teórico', 'residuo': 'residuo', });
 lyr_WebCamsPirineos_5.set('fieldAliases', {'fid': 'fid', 'Nombre': 'Nombre', 'Altitud': 'Altitud', 'Url_imagen': 'Url_imagen', });
 lyr_Nivmetros_4.set('fieldImages', {'fid': 'TextEdit', 'nombre': 'TextEdit', 'tipo': 'TextEdit', 'coordenada x': 'TextEdit', 'coordenada y': 'TextEdit', 'espesor': 'TextEdit', 'fecha': 'DateTime', 'Altura': 'TextEdit', 'espesor teórico': 'TextEdit', 'residuo': 'TextEdit', });
